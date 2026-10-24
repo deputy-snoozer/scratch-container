@@ -27,3 +27,6 @@
 <img width="658" height="370" alt="image" src="https://github.com/user-attachments/assets/87be2a56-63ae-4ca0-a428-8e22c5019e99" />
 <p>Now the shell is clearly running in the new namespace:</p>
 <img width="981" height="160" alt="image" src="https://github.com/user-attachments/assets/2b633cb7-586d-45d1-a8d1-b2394ebfedb1" />
+<p>This process can still see processes running on the host machine:</p>
+<img width="669" height="208" alt="image" src="https://github.com/user-attachments/assets/a4288014-efb4-4c08-8c24-217e5ae2b578" />
+<p>I plan to address this in the next commit.</p>
