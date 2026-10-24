@@ -19,3 +19,11 @@
 <p>The command is successfully executed. I can also run a shell:</p>
 <img width="694" height="264" alt="image" src="https://github.com/user-attachments/assets/cffc4baa-7ac8-4b20-87de-bdcc0f653c1d" />
 <p>It isn't clear that the terminal is using that shell, but we can see the shell running. I'd like to address this in the next commit by specifying a namespace for this command.</p>
+
+<h2>Setting namespace for process</h2>
+<p>The process now invokes itself inside a new UTS namespace. It uses "/proc/self/exe" to reference its own executable, passing the "child" command along with the original args.</p>
+<img width="1084" height="435" alt="image" src="https://github.com/user-attachments/assets/60175ca6-4250-4e17-90d6-18c1dcc7651a" />
+<p>The child process sets the hostname to "container":</p>
+<img width="658" height="370" alt="image" src="https://github.com/user-attachments/assets/87be2a56-63ae-4ca0-a428-8e22c5019e99" />
+<p>Now the shell is clearly running in the new namespace:</p>
+<img width="981" height="160" alt="image" src="https://github.com/user-attachments/assets/2b633cb7-586d-45d1-a8d1-b2394ebfedb1" />
