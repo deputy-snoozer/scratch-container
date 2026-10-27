@@ -33,4 +33,14 @@
 
 <h2>Adding a PID namespace and chroot</h2>
 <p>The child process now starts in a new PID namespace and changes its root directory to a prepared Ubuntu filesystem at <code>/home/alex/vagrant/ubuntu-fs</code>. This lets it run commands, such as Bash, from inside that filesystem.</p>
-<p>The filesystem path is specific to my WSL setup and needs to be changed if the root filesystem is stored somewhere else. Processes still need a separate <code>/proc</code> mount to be visible to tools like <code>ps</code> inside the PID namespace; I plan to address this next.</p>
+<img width="985" height="106" alt="image" src="https://github.com/user-attachments/assets/4d3b8971-e266-4c86-8f77-d4707827f20c" />
+<img width="1359" height="90" alt="image" src="https://github.com/user-attachments/assets/2eb6e3b9-dd7d-43fe-be29-3653e2233cb4" />
+<p>The filesystem path is specific to my WSL setup and needs to be changed if the root filesystem is stored somewhere else.</p>
+<p>Running a sleep command on the container and then checking sleep processes on the host:</p>
+<img width="306" height="19" alt="image" src="https://github.com/user-attachments/assets/9698bc94-0a56-481a-a95c-038293114db9" />
+<p>I can see all the information stored for that process in the dedicated <code>/proc/<PID></code> directory:</p>
+<img width="1311" height="264" alt="image" src="https://github.com/user-attachments/assets/3e2c3831-b9c6-4a53-9e3f-a245d4fdda96" />
+<p>Including the root directory of the process:</p>
+<img width="951" height="70" alt="image" src="https://github.com/user-attachments/assets/76edf3d5-1170-47d3-b215-9b36ecbe1b80" />
+<p>Processes still need a separate <code>/proc</code> mount to be visible to tools like <code>ps</code> inside the PID namespace; I plan to address this next.</p>
+<img width="442" height="49" alt="image" src="https://github.com/user-attachments/assets/4081f19d-c2f8-4a56-8e26-04348432fd89" />
